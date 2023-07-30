@@ -1,0 +1,19 @@
+{% load static %}
+<div class="container">
+    <div class="row"
+        style="align-items: stretch; display: flex; flex-direction: row; flex-wrap: nowrap; overflow-x: auto; overflow-y: hidden;">
+        {% for x in files_gp %}
+        <div class="card" style="width: 12rem; max-width: 33.333%; padding: .75rem; margin-bottom: 2rem; border: 0; flex-basis: 33.333%; flex-grow: 0; flex-shrink: 0;">
+            <!-- may need to remove width-->
+            <div class="card-body">
+                <h5 class="card-title">{{file_name}}</h5>
+                <embed src="{% get_static_prefix %}гражданско право/{{file_name}}" type="application/pdf" height="150px"
+                    width="150px">
+                <a href='{% get_static_prefix %}гражданско право/{{file_name}}' class="btn btn-primary"
+                    target="_blank">Отвори</a>
+                <!--   "../static/pdf/{{file_name}}" something like that if possible? -->
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
