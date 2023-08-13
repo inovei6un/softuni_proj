@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+ <div class="container-fluid bg-page-header" style="margin-bottom: 20px;">
+    <div class="container">
+        <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 400px">
+            <h3 class="display-3 text-white text-uppercase">Относно</h3>
+            <div class="d-inline-flex text-white">
+                <p class="m-0 text-uppercase"><a class="text-white" href="{%url 'index' %}">Начало</a></p>
+                <i class="fa fa-angle-double-right pt-1 px-3"></i>
+                <p class="m-0 text-uppercase">Относно</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container-fluid py-5">
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-lg-5">
+                <img class="img-fluid rounded" src="{% static 'lawyer_site/media/profile_pic.jpg' %}" alt="">
+            </div>
+            <div class="col-lg-7 mt-4 mt-lg-0">
+                <h2 class="position-relative text-center bg-white text-primary rounded p-3 mt-4 mb-4 d-none d-lg-block" style="width: 350px; margin-left: -205px;">6 години опит</h2>
+                <h6 class="text-uppercase">Научете за мен</h6>
+                <h1 class="mb-4">адв. Ралица Рачева</h1>
+                <p style='text-align: justify;'>Завърших право във ВТУ "Св. Св. Кирил и Методий". От 11 години придобивам умения и опит в правната наука. Професионалното ми развитие започва в полицията в гр. Левски, в която работих като разследващ полицай. През 2018 г. се вписах в АК Плевен и положих клетва. От тогава давам всичко от себе си, за да мога да оказвам адекватна правна помощ. Основните дела, които работя са в сферата на наказателното, административно-наказателното, гражданското право, като имам немалък опит и в останалите юридически сфери. Според мен едно от основните правила на нашата професия е да накараш клиентите си да споделят изцяло фактите по конкретния казус, което винаги води до разкриване на обективната истина и справедлив съдебен акт.</p>
+            </div>
+            <br></br>
+            <br></br>
+            <br></br>
+{#            <h4 class="position-relative text-center bg-white text-primary rounded p-3 mt-4 mb-4 d-none d-lg-block">Magna et veritas, et praevalebit - Няма нищо по-висше от истината и тя ще възтържествува</h4>#}
+{#            <h4 class="position-relative text-center bg-white text-primary rounded p-3 mt-4 mb-4 d-none d-lg-block">Facta probantur, iura deducuntur. - Фактите се доказват, правата се извличат. </h4> <!-- мръдни по-вдясно-->#}
+        </div>
+    </div>
+</div>
+{% endblock %}

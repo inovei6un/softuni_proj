@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+        <style>
+        .errorlist {
+            color: red;
+        }
+    </style>
+<!-- Page Header Start -->
+<div class="container-fluid bg-page-header" style="margin-bottom: 90px;">
+    <div class="container">
+        <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 400px">
+            <h3 class="display-3 text-white text-uppercase">Онлайн консултация</h3>
+            <div class="d-inline-flex text-white">
+                <p class="m-0 text-uppercase"><a class="text-white" href="{%url 'index' %}">Начало</a></p>
+                <i class="fa fa-angle-double-right pt-1 px-3"></i>
+                <p class="m-0 text-uppercase">Консултация</p>
+            </div>
+        </div>
+    </div>
+</div>
+    {% if user.is_authenticated %}
+<div class="container-fluid py-5">
+    <div class="container py-5">
+        <div class="text-center pb-2">
+            <h6 class="text-uppercase"></h6>
+            <h1 class="mb-4">Консултирайте се онлайн или на посочения адрес.</h1>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 mb-5 mb-lg-0">
+                <div class="contact-form">
+                    <div id="success"></div>
+                    <form method="POST" action="{%url 'contact' %}" name="sentMessage" id="contactForm">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <div>
+                            <button class="btn btn-primary btn-block" type="submit" id="sendMessageButton">Изпрати запитване</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-6" style="min-height: 400px;">
+                <div class="position-relative h-100 rounded overflow-hidden">
+                    <iframe style="width: 100%; height: 100%; object-fit: cover;"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1450.4484043738712!2d25.14221771774193!3d43.35826905658828!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40a954b2b62718b1%3A0x911a1e73ea672d58!2z0YPQuy4g0J_QtdC50L4g0K_QstC-0YDQvtCyIDMsIDU5MDAg0KbQtdC90YLRitGALCDQm9C10LLRgdC60Lg!5e0!3m2!1sbg!2sbg!4v1671509934739!5m2!1sbg!2sbg"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade" width="600" height="450" style="border:0;"
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" frameborder="0"
+                        style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    {% else %}
+{#        <div class="container-fluid py-5">#}
+    <div class="container py-5">
+        <div class="text-center pb-2">
+            <h6 class="text-uppercase"></h6>
+            <h1 class="mb-4">Моля, регистрирайте се, или влезте в акаунта си!</h1>
+        </div>
+
+        </div>
+    </div>
+</div>
+    {% endif %}
+{% endblock %}
